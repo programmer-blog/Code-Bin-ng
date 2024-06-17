@@ -1,0 +1,14 @@
+<form class="container" [formGroup]="binForm">
+
+    <h4>Login</h4>
+    <input type="text" placeholder="title" [formControl]="title" />
+    <h5 class="red-text" [hidden]="title.valid || title.untouched">Title is Required</h5>
+    <textarea placeholder="Code" [formControl]="code"></textarea>
+    <h5 class="red-text" 
+    [hidden]="code.valid || code.untouched">
+    code is required.</h5>
+    
+    <button class="btn-green" [disabled]="binForm.invalid"
+     (click)="save()">Save</button>
+
+    </form>
